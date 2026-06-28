@@ -4592,19 +4592,19 @@
 
         const agentResponses = {
             optimize: [
-                { text: 'Analyzing 42 appointments across Charlotte territory...', delay: 800 },
-                { text: 'Optimizing routes for 5 technicians based on proximity, skill match, and SLA windows.', delay: 1500 },
-                { text: 'Done! All routes optimized. Drive time reduced 18% vs. last week. Total mileage: 175 mi (down from 213 mi).', delay: 2200 },
+                { text: 'Analyzing 42 appointments across Charlotte territory...', delay: 1400 },
+                { text: 'Optimizing routes for 5 technicians based on proximity, skill match, and SLA windows.', delay: 2800 },
+                { text: 'Done! All routes optimized. Drive time reduced 18% vs. last week. Total mileage: 175 mi (down from 213 mi).', delay: 4200 },
             ],
             sick: [
-                { text: 'Detecting disruption... Jordan M. reported absence at 6:15 AM.', delay: 800 },
-                { text: '8 appointments need reassignment. Redistributing based on capacity and proximity...', delay: 1600 },
-                { text: 'Redistribution complete. Marcus (+2), Ashley (+3), Devon (+2), Chris (+1). All revenue targets maintained. Customers notified via SMS.', delay: 2400 },
+                { text: 'Detecting disruption... Jordan M. reported absence at 6:15 AM.', delay: 1400 },
+                { text: '8 appointments need reassignment. Redistributing based on capacity and proximity...', delay: 3000 },
+                { text: 'Redistribution complete. Marcus (+2), Ashley (+3), Devon (+2), Chris (+1). All revenue targets maintained. Customers notified via SMS.', delay: 4600 },
             ],
             gap: [
-                { text: 'Scanning for schedule gaps and cancellations...', delay: 800 },
-                { text: 'Found: Cancellation at 147 Willow Way ($320). Jordan\'s route dropped below $1,500 minimum.', delay: 1600 },
-                { text: 'Gap filled: 369 Magnolia Dr — Aeration — $220 (1.3 mi away). Route revenue restored to $1,580. Customer confirmed.', delay: 2400, actions: ['Confirm Fill', 'Find More'] },
+                { text: 'Scanning for schedule gaps and cancellations...', delay: 1400 },
+                { text: 'Found: Cancellation at 147 Willow Way ($320). Jordan\'s route dropped below $1,500 minimum.', delay: 3000 },
+                { text: 'Gap filled: 369 Magnolia Dr — Aeration — $220 (1.3 mi away). Route revenue restored to $1,580. Customer confirmed.', delay: 4600, actions: ['Confirm Fill', 'Find More'] },
             ]
         };
 
@@ -4914,7 +4914,7 @@
             mcSmsChat.innerHTML = '';
             mcSmsIndex = 0;
             mcSmsRunning = true;
-            setTimeout(playNextMcSms, 600);
+            setTimeout(playNextMcSms, 1200);
         }
 
         function playNextMcSms() {
@@ -4922,7 +4922,7 @@
                 if (mcSmsRunning && mcSmsIndex >= mcSmsMessages.length) {
                     setTimeout(() => {
                         if (mcSmsRunning) startMcSmsAnimation();
-                    }, 4000);
+                    }, 6000);
                 }
                 return;
             }
@@ -4937,22 +4937,22 @@
                 mcSmsChat.appendChild(typing);
                 mcSmsChat.scrollTop = mcSmsChat.scrollHeight;
 
-                const typingDuration = Math.min(800 + msg.text.length * 6, 2000);
+                const typingDuration = Math.min(1200 + msg.text.length * 10, 3500);
                 setTimeout(() => {
                     if (!mcSmsRunning) return;
                     const t = document.getElementById('mc-sms-typing');
                     if (t) t.remove();
                     renderMcSmsMsg(msg);
                     mcSmsIndex++;
-                    setTimeout(playNextMcSms, 1200);
+                    setTimeout(playNextMcSms, 2200);
                 }, typingDuration);
             } else {
                 setTimeout(() => {
                     if (!mcSmsRunning) return;
                     renderMcSmsMsg(msg);
                     mcSmsIndex++;
-                    setTimeout(playNextMcSms, 1000);
-                }, 800);
+                    setTimeout(playNextMcSms, 1800);
+                }, 1400);
             }
         }
 
@@ -5020,7 +5020,7 @@
                     smsChat.innerHTML = '';
                     smsIndex = 0;
                     addSmsMessage();
-                }, 4000);
+                }, 6000);
                 return;
             }
 
@@ -5029,19 +5029,19 @@
 
             if (isIncoming) {
                 showTypingBubble();
-                const typingDuration = Math.min(800 + msg.text.length * 8, 2200);
+                const typingDuration = Math.min(1200 + msg.text.length * 12, 3500);
                 setTimeout(() => {
                     removeTypingBubble();
                     renderSmsMessage(msg);
                     smsIndex++;
-                    setTimeout(addSmsMessage, 1200);
+                    setTimeout(addSmsMessage, 2200);
                 }, typingDuration);
             } else {
                 setTimeout(() => {
                     renderSmsMessage(msg);
                     smsIndex++;
-                    setTimeout(addSmsMessage, 1000);
-                }, 600);
+                    setTimeout(addSmsMessage, 1800);
+                }, 1400);
             }
         }
 
