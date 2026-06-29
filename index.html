@@ -3217,7 +3217,7 @@
 
                             <p>If you've been on the fence (which, by the way, we can make look great too) &mdash; now's the time to hop off it.</p>
 
-                            <a href="#" class="mc-email-cta">Redeem Your 50% Off &rarr;</a>
+                            <a href="#" class="mc-email-cta" onclick="event.preventDefault(); showNetNewPopup();">Redeem Your 50% Off &rarr;</a>
 
                             <p style="text-align: center; font-size: 12px; color: #718096; margin-top: 12px;">New lawn care customers only. Cannot be combined with other discounts.</p>
 
@@ -5606,6 +5606,359 @@
         </div>
     </div>
 
+    <!-- Net-New 50% Off Lead Form Popup -->
+    <div class="schedule-overlay" id="netnew-overlay">
+        <div class="schedule-modal" style="width: 520px;">
+            <div class="schedule-header" style="position: relative; background: linear-gradient(135deg, #14321c 0%, #1e4d2b 100%);">
+                <img src="images/top-turf-logo-dark.svg" alt="Top Turf" style="height: 36px; display: block; margin: 0 auto 8px;">
+                <div class="schedule-header-sub" style="color: #5cb85c;">Your Beautiful Lawn Starts Here</div>
+            </div>
+            <div id="netnew-body">
+                <div style="background: linear-gradient(135deg, #14321c, #3d8b37); padding: 16px 24px; text-align: center;">
+                    <span style="font-size: 24px; font-weight: 800; color: white;">50% OFF</span>
+                    <span style="font-size: 14px; color: rgba(255,255,255,0.85); margin-left: 8px;">Your First Application</span>
+                </div>
+                <div class="schedule-body" style="padding: 24px;">
+                    <p style="font-size: 14px; color: var(--gray-700); text-align: center; margin-bottom: 20px; font-weight: 600;">Submit for a call back now! <span style="font-size: 12px; font-weight: 400; color: var(--gray-500);">(During business hours)</span></p>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px;">
+                        <input type="text" placeholder="First Name*" value="Mike" style="padding: 10px 12px; border: 1px solid var(--gray-200); border-radius: 6px; font-size: 13px; outline: none;" required>
+                        <input type="text" placeholder="Last Name*" value="Daniels" style="padding: 10px 12px; border: 1px solid var(--gray-200); border-radius: 6px; font-size: 13px; outline: none;" required>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px;">
+                        <input type="email" placeholder="Email*" value="mike.daniels@gmail.com" style="padding: 10px 12px; border: 1px solid var(--gray-200); border-radius: 6px; font-size: 13px; outline: none;" required>
+                        <input type="email" placeholder="Secondary Email (Optional)" style="padding: 10px 12px; border: 1px solid var(--gray-200); border-radius: 6px; font-size: 13px; outline: none;">
+                    </div>
+
+                    <input type="text" placeholder="Street Address*" value="4821 Oakwood Dr" style="width: 100%; padding: 10px 12px; border: 1px solid var(--gray-200); border-radius: 6px; font-size: 13px; outline: none; margin-bottom: 12px;" required>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 12px;">
+                        <input type="text" placeholder="City*" value="Charlotte" style="padding: 10px 12px; border: 1px solid var(--gray-200); border-radius: 6px; font-size: 13px; outline: none;" required>
+                        <select style="padding: 10px 12px; border: 1px solid var(--gray-200); border-radius: 6px; font-size: 13px; outline: none; color: var(--gray-700); background: white;" required>
+                            <option value="" disabled>State*</option>
+                            <option>AL</option><option>AK</option><option>AZ</option><option>AR</option><option>CA</option>
+                            <option>CO</option><option>CT</option><option>DE</option><option>FL</option><option>GA</option>
+                            <option>HI</option><option>ID</option><option>IL</option><option>IN</option><option>IA</option>
+                            <option>KS</option><option>KY</option><option>LA</option><option>ME</option><option>MD</option>
+                            <option>MA</option><option>MI</option><option>MN</option><option>MS</option><option>MO</option>
+                            <option>MT</option><option>NE</option><option>NV</option><option>NH</option><option>NJ</option>
+                            <option>NM</option><option>NY</option><option selected>NC</option><option>ND</option><option>OH</option>
+                            <option>OK</option><option>OR</option><option>PA</option><option>RI</option><option>SC</option>
+                            <option>SD</option><option>TN</option><option>TX</option><option>UT</option><option>VT</option>
+                            <option>VA</option><option>WA</option><option>WV</option><option>WI</option><option>WY</option>
+                        </select>
+                        <input type="text" placeholder="Postal Code*" value="28210" style="padding: 10px 12px; border: 1px solid var(--gray-200); border-radius: 6px; font-size: 13px; outline: none;" required>
+                    </div>
+
+                    <div style="margin-bottom: 12px;">
+                        <label style="font-size: 11px; font-weight: 700; color: var(--gray-700); text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 6px;">Phone Number*</label>
+                        <div style="display: grid; grid-template-columns: 1fr; gap: 8px;">
+                            <select style="padding: 10px 12px; border: 1px solid var(--gray-200); border-radius: 6px; font-size: 13px; outline: none; color: var(--gray-700); background: white;">
+                                <option selected>United States</option>
+                            </select>
+                            <input type="tel" placeholder="+1" value="+1 (704) 555-0148" style="padding: 10px 12px; border: 1px solid var(--gray-200); border-radius: 6px; font-size: 13px; outline: none;" required>
+                        </div>
+                    </div>
+
+                    <select style="width: 100%; padding: 10px 12px; border: 1px solid var(--gray-200); border-radius: 6px; font-size: 13px; outline: none; color: var(--gray-700); background: white; margin-bottom: 20px;" required>
+                        <option value="" disabled>How did you find us?*</option>
+                        <option>Previous Customer</option>
+                        <option>Customer Referral</option>
+                        <option>Saw Truck/Sign</option>
+                        <option selected>Saw Online Reviews</option>
+                        <option>Mailers</option>
+                        <option>Other</option>
+                        <option>Home Inspector</option>
+                        <option>HOA</option>
+                        <option>Builder</option>
+                    </select>
+
+                    <button class="schedule-confirm-btn" onclick="confirmNetNew()" style="width: 100%;">Submit &amp; Redeem 50% Off</button>
+
+                    <p style="font-size: 10px; color: var(--gray-500); line-height: 1.5; margin-top: 14px;">Top Turf needs the contact information you provide to us to contact you about our products and services. Contact may come to you in the form of phone call, email, direct mail, or SMS text message. By clicking the submit button below, you are consenting to receive communication in any of the previously mentioned forms from Top Turf. You may unsubscribe from these communications at any time. For information on how to unsubscribe, as well as our privacy practices and commitment to protecting your privacy, check out our <a href="#" style="color: #0176d3;">Privacy Policy</a>.</p>
+                </div>
+            </div>
+            <!-- Placeholder: SF mobile is a separate overlay below -->
+            <div id="netnew-sf-mobile-placeholder" style="display:none;"></div>
+        </div>
+    </div>
+
+    <!-- Salesforce Mobile Phone Overlay (floating phone, click outside to close) -->
+    <div id="netnew-sf-mobile" style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 10001; background: rgba(0,0,0,0.5); align-items: center; justify-content: center;" onclick="if(event.target===this)hideNetNewPopup();">
+                    <!-- iPhone Frame -->
+                    <div style="width: 255px; height: 540px; background: #000; border-radius: 34px; padding: 7px; box-shadow: 0 16px 48px rgba(0,0,0,0.4); overflow: hidden;">
+                        <div style="background: #f5f5f5; border-radius: 27px; overflow: hidden; position: relative; width: 320px; height: 692px; transform: scale(0.755); transform-origin: top left;">
+                            <!-- Status Bar -->
+                            <div style="background: white; padding: 8px 24px 0; display: flex; justify-content: space-between; align-items: center; position: relative; z-index: 10;">
+                                <span style="font-size: 12px; font-weight: 600;">11:27</span>
+                                <div style="width: 80px; height: 22px; background: #000; border-radius: 12px;"></div>
+                                <span style="font-size: 11px;">&#x1F50B; &#x1F4F6;</span>
+                            </div>
+
+                            <!-- SCREEN 1: SF Mobile Home (like the screenshot) -->
+                            <div id="sf-screen-home" style="background: white; display: flex; flex-direction: column; height: 100%; position: absolute; top: 30px; left: 0; right: 0; bottom: 0;">
+                                <!-- SF App Header -->
+                                <div style="background: white; padding: 10px 16px 6px; display: flex; align-items: center; justify-content: space-between;">
+                                    <div style="display: flex; align-items: center; gap: 10px;">
+                                        <div style="width: 28px; height: 28px; background: linear-gradient(135deg, #0176d3, #032d60); border-radius: 6px; display: flex; align-items: center; justify-content: center;">
+                                            <svg width="16" height="12" viewBox="0 0 24 16" fill="white"><path d="M12 0C5.4 0 0 3.6 0 8s5.4 8 12 8 12-3.6 12-8-5.4-8-12-8z"/></svg>
+                                        </div>
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 16px;">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#444" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg>
+                                        <div style="position: relative;">
+                                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#444" stroke-width="2"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>
+                                            <div id="sf-bell-dot" style="position: absolute; top: -2px; right: -2px; width: 9px; height: 9px; background: #ea4335; border-radius: 50%; border: 1.5px solid white; opacity: 0; transition: opacity 0.3s;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Home Title -->
+                                <div style="padding: 4px 16px 12px; display: flex; align-items: center; justify-content: space-between;">
+                                    <span style="font-size: 22px; font-weight: 800; color: #1a1a1a;">Home</span>
+                                    <span style="font-size: 13px; font-weight: 600; color: #0176d3;">Edit</span>
+                                </div>
+
+                                <!-- Pinned Report Card -->
+                                <div style="margin: 0 12px 12px; background: white; border-radius: 10px; border: 1px solid #e8e8e8; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.06);">
+                                    <div style="background: #e8f4fd; padding: 6px 12px;">
+                                        <span style="font-size: 11px; font-weight: 700; color: #0176d3;">Pinned Report</span>
+                                    </div>
+                                    <div style="padding: 12px 14px;">
+                                        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="#666"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6z"/></svg>
+                                            <span style="font-size: 15px; font-weight: 700; color: #1a1a1a;">My Top Accounts</span>
+                                        </div>
+                                        <div style="font-size: 11px; color: #999; margin-bottom: 10px;">Just now</div>
+                                        <div style="margin-bottom: 6px;">
+                                            <span style="font-size: 11px; color: #666;">Sum of Amount</span>
+                                            <div style="font-size: 15px; font-weight: 700; color: #1a1a1a;">USD 2,444,600.00 <span style="font-size: 11px; color: #999; font-weight: 400;">No change</span></div>
+                                        </div>
+                                        <div style="margin-bottom: 10px;">
+                                            <span style="font-size: 11px; color: #666;">Record Count</span>
+                                            <div style="font-size: 15px; font-weight: 700; color: #1a1a1a;">49 <span style="font-size: 11px; color: #999; font-weight: 400;">No change</span></div>
+                                        </div>
+                                        <!-- Mini Table -->
+                                        <div style="border-top: 1px solid #eee; padding-top: 8px;">
+                                            <div style="display: grid; grid-template-columns: 1.2fr 1fr 0.6fr; gap: 4px; font-size: 10px; font-weight: 600; color: #666; margin-bottom: 4px;">
+                                                <span>Account Name</span><span>Sum of Amount</span><span>Record Count</span>
+                                            </div>
+                                            <div style="display: grid; grid-template-columns: 1.2fr 1fr 0.6fr; gap: 4px; font-size: 11px; color: #333; padding: 3px 0;">
+                                                <span>Accusage, Inc.</span><span>USD 317,000.00</span><span>4</span>
+                                            </div>
+                                            <div style="display: grid; grid-template-columns: 1.2fr 1fr 0.6fr; gap: 4px; font-size: 11px; color: #333; padding: 3px 0;">
+                                                <span>Allied Technolo...</span><span>USD 43,000.00</span><span>2</span>
+                                            </div>
+                                            <div style="display: grid; grid-template-columns: 1.2fr 1fr 0.6fr; gap: 4px; font-size: 11px; color: #333; padding: 3px 0;">
+                                                <span>Anaco Limited</span><span>USD 527,000.00</span><span>2</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Salesforce Events -->
+                                <div style="margin: 0 12px 12px; background: white; border-radius: 10px; border: 1px solid #e8e8e8; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.06);">
+                                    <div style="background: #e8f4fd; padding: 6px 12px;">
+                                        <span style="font-size: 11px; font-weight: 700; color: #0176d3;">Salesforce Events</span>
+                                    </div>
+                                    <div style="padding: 12px 14px;">
+                                        <div style="font-size: 14px; font-weight: 700; color: #1a1a1a; margin-bottom: 8px;">Today</div>
+                                        <div style="display: flex; align-items: center; gap: 8px;">
+                                            <div style="width: 3px; height: 28px; background: #0176d3; border-radius: 2px;"></div>
+                                            <div>
+                                                <div style="font-size: 11px; color: #666;">10:00 AM - 11:00 AM</div>
+                                                <div style="font-size: 13px; color: #1a1a1a; font-weight: 500;">Staff Meeting</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Ask Chatbar -->
+                                <div style="margin: 0 12px 8px; background: #f0f0f0; border-radius: 20px; padding: 10px 14px; display: flex; align-items: center; gap: 8px;">
+                                    <span style="font-size: 14px;">&#x1F914;</span>
+                                    <span style="font-size: 13px; color: #999;">How can I help?</span>
+                                </div>
+
+                                <!-- Bottom Nav -->
+                                <div style="background: white; padding: 10px 0 6px; border-top: 1px solid #eee; display: flex; justify-content: space-around; margin-top: auto;">
+                                    <div style="text-align: center;">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="#0176d3"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+                                        <div style="font-size: 9px; color: #0176d3; margin-top: 2px; font-weight: 600;">Home</div>
+                                    </div>
+                                    <div id="sf-nav-leads" style="text-align: center; cursor: pointer;">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="#666"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                                        <div style="font-size: 9px; color: #666; margin-top: 2px;">Leads</div>
+                                    </div>
+                                    <div style="text-align: center;">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="#666"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm-1 7V3.5L18.5 9H13z"/></svg>
+                                        <div style="font-size: 9px; color: #666; margin-top: 2px;">Quotes</div>
+                                    </div>
+                                    <div style="text-align: center;">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="#666"><path d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10z"/></svg>
+                                        <div style="font-size: 9px; color: #666; margin-top: 2px;">Accounts</div>
+                                    </div>
+                                    <div style="text-align: center;">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="#666"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+                                        <div style="font-size: 9px; color: #666; margin-top: 2px;">Menu</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Notification Banner (slides down over Home screen) -->
+                            <div id="sf-notif-banner" style="position: absolute; top: 30px; left: 10px; right: 10px; background: white; border-radius: 14px; box-shadow: 0 4px 20px rgba(0,0,0,0.18); overflow: hidden; opacity: 0; transform: translateY(-20px); transition: all 0.5s cubic-bezier(0.4,0,0.2,1); z-index: 20;">
+                                <div style="padding: 12px 14px; display: flex; gap: 10px; align-items: flex-start;">
+                                    <div style="width: 36px; height: 36px; background: linear-gradient(135deg, #0176d3, #032d60); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                        <svg width="20" height="14" viewBox="0 0 24 16" fill="white"><path d="M12 0C5.4 0 0 3.6 0 8s5.4 8 12 8 12-3.6 12-8-5.4-8-12-8z"/></svg>
+                                    </div>
+                                    <div style="flex: 1; min-width: 0;">
+                                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+                                            <span style="font-size: 13px; font-weight: 700; color: #032d60;">Salesforce</span>
+                                            <span style="font-size: 11px; color: #999;">now</span>
+                                        </div>
+                                        <p style="font-size: 13px; font-weight: 600; color: #1a1a1a; margin: 0 0 2px;">New Lead Assigned to You</p>
+                                        <p style="font-size: 12px; color: #666; margin: 0; line-height: 1.3;">Mike Daniels &mdash; 50% Off First App (Web). Tap to view lead details.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- SCREEN 2: Lead Detail (hidden initially) -->
+                            <div id="sf-screen-leads" style="display: none; background: white; flex-direction: column; position: absolute; top: 30px; left: 0; right: 0; bottom: 14px;">
+                                <!-- SF App Header (same as Home) -->
+                                <div style="background: white; padding: 10px 16px 6px; display: flex; align-items: center; justify-content: space-between;">
+                                    <div style="display: flex; align-items: center; gap: 10px;">
+                                        <div style="width: 28px; height: 28px; background: linear-gradient(135deg, #0176d3, #032d60); border-radius: 6px; display: flex; align-items: center; justify-content: center;">
+                                            <svg width="16" height="12" viewBox="0 0 24 16" fill="white"><path d="M12 0C5.4 0 0 3.6 0 8s5.4 8 12 8 12-3.6 12-8-5.4-8-12-8z"/></svg>
+                                        </div>
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 16px;">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#444" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg>
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#444" stroke-width="2"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>
+                                    </div>
+                                </div>
+
+                                <!-- Leads Title -->
+                                <div style="padding: 4px 16px 12px; display: flex; align-items: center; justify-content: space-between;">
+                                    <span style="font-size: 22px; font-weight: 800; color: #1a1a1a;">Leads</span>
+                                    <span style="font-size: 13px; font-weight: 600; color: #0176d3;">Edit</span>
+                                </div>
+
+                                <!-- Scrollable Content Area -->
+                                <div style="flex: 1; overflow-y: auto; padding-bottom: 8px;">
+                                    <!-- New Lead Card -->
+                                    <div style="margin: 0 12px 12px; background: white; border-radius: 10px; border: 1px solid #e8e8e8; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.06);">
+                                        <div style="background: #e8f4fd; padding: 6px 12px;">
+                                            <span style="font-size: 11px; font-weight: 700; color: #0176d3;">New Lead</span>
+                                        </div>
+                                        <div style="padding: 12px 14px;">
+                                            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                                                <div style="width: 36px; height: 36px; background: linear-gradient(135deg, #2e844a, #1e4d2b); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 13px; font-weight: 700;">MD</div>
+                                                <div>
+                                                    <div style="font-size: 15px; font-weight: 700; color: #032d60;">Mike Daniels</div>
+                                                    <div style="font-size: 11px; color: #666;">50% Off First App &bull; Web Form</div>
+                                                </div>
+                                            </div>
+                                            <div style="display: flex; gap: 6px; margin-bottom: 12px;">
+                                                <a style="flex: 1; background: #0176d3; color: white; font-size: 11px; font-weight: 600; text-align: center; padding: 7px 4px; border-radius: 6px; text-decoration: none; cursor: pointer;">&#x1F4DE; Call</a>
+                                                <a style="flex: 1; background: #2e844a; color: white; font-size: 11px; font-weight: 600; text-align: center; padding: 7px 4px; border-radius: 6px; text-decoration: none; cursor: pointer;">&#x2709; Email</a>
+                                                <a style="flex: 1; background: #5c2d91; color: white; font-size: 11px; font-weight: 600; text-align: center; padding: 7px 4px; border-radius: 6px; text-decoration: none; cursor: pointer;">&#x1F4AC; Text</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Contact Details Card -->
+                                    <div style="margin: 0 12px 12px; background: white; border-radius: 10px; border: 1px solid #e8e8e8; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.06);">
+                                        <div style="background: #e8f4fd; padding: 6px 12px;">
+                                            <span style="font-size: 11px; font-weight: 700; color: #0176d3;">Contact Details</span>
+                                        </div>
+                                        <div style="padding: 10px 14px;">
+                                            <div style="padding: 6px 0; border-bottom: 1px solid #f0f0f0;">
+                                                <div style="font-size: 10px; color: #888; text-transform: uppercase; letter-spacing: 0.3px;">Phone</div>
+                                                <div style="font-size: 14px; color: #0176d3; font-weight: 500;">+1 (704) 555-0148</div>
+                                            </div>
+                                            <div style="padding: 6px 0; border-bottom: 1px solid #f0f0f0;">
+                                                <div style="font-size: 10px; color: #888; text-transform: uppercase; letter-spacing: 0.3px;">Email</div>
+                                                <div style="font-size: 14px; color: #0176d3; font-weight: 500;">mike.daniels@gmail.com</div>
+                                            </div>
+                                            <div style="padding: 6px 0; border-bottom: 1px solid #f0f0f0;">
+                                                <div style="font-size: 10px; color: #888; text-transform: uppercase; letter-spacing: 0.3px;">Address</div>
+                                                <div style="font-size: 14px; color: #1a1a1a;">4821 Oakwood Dr, Charlotte, NC 28210</div>
+                                            </div>
+                                            <div style="padding: 6px 0; border-bottom: 1px solid #f0f0f0;">
+                                                <div style="font-size: 10px; color: #888; text-transform: uppercase; letter-spacing: 0.3px;">Lead Source</div>
+                                                <div style="font-size: 14px; color: #1a1a1a;">Saw Online Reviews</div>
+                                            </div>
+                                            <div style="padding: 6px 0; border-bottom: 1px solid #f0f0f0;">
+                                                <div style="font-size: 10px; color: #888; text-transform: uppercase; letter-spacing: 0.3px;">Campaign</div>
+                                                <div style="font-size: 14px; color: #1a1a1a;">50% Off New Customer</div>
+                                            </div>
+                                            <div style="padding: 6px 0;">
+                                                <div style="font-size: 10px; color: #888; text-transform: uppercase; letter-spacing: 0.3px;">Status</div>
+                                                <div style="display: inline-flex; align-items: center; gap: 4px;">
+                                                    <span style="width: 7px; height: 7px; background: #2e844a; border-radius: 50%; display: inline-block;"></span>
+                                                    <span style="font-size: 14px; color: #2e844a; font-weight: 600;">New &mdash; Not Contacted</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Property Details Card -->
+                                    <div style="margin: 0 12px 12px; background: white; border-radius: 10px; border: 1px solid #e8e8e8; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.06);">
+                                        <div style="background: #e8f4fd; padding: 6px 12px;">
+                                            <span style="font-size: 11px; font-weight: 700; color: #0176d3;">Property Details</span>
+                                        </div>
+                                        <div style="padding: 10px 14px;">
+                                            <div style="padding: 6px 0; border-bottom: 1px solid #f0f0f0;">
+                                                <div style="font-size: 10px; color: #888; text-transform: uppercase; letter-spacing: 0.3px;">Service Address</div>
+                                                <div style="font-size: 14px; color: #1a1a1a;">4821 Oakwood Dr, Charlotte, NC 28210</div>
+                                            </div>
+                                            <div style="padding: 6px 0; border-bottom: 1px solid #f0f0f0;">
+                                                <div style="font-size: 10px; color: #888; text-transform: uppercase; letter-spacing: 0.3px;">State</div>
+                                                <div style="font-size: 14px; color: #1a1a1a;">North Carolina</div>
+                                            </div>
+                                            <div style="padding: 6px 0;">
+                                                <div style="font-size: 10px; color: #888; text-transform: uppercase; letter-spacing: 0.3px;">Offer Redeemed</div>
+                                                <div style="font-size: 14px; color: #1a1a1a;">50% Off First Application</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Activity Card -->
+                                    <div style="margin: 0 12px 12px; background: white; border-radius: 10px; border: 1px solid #e8e8e8; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.06);">
+                                        <div style="background: #e8f4fd; padding: 6px 12px;">
+                                            <span style="font-size: 11px; font-weight: 700; color: #0176d3;">Activity</span>
+                                        </div>
+                                        <div style="padding: 10px 14px;">
+                                            <div style="padding: 6px 0; border-bottom: 1px solid #f0f0f0;">
+                                                <div style="font-size: 10px; color: #888; text-transform: uppercase; letter-spacing: 0.3px;">Created</div>
+                                                <div style="font-size: 14px; color: #1a1a1a;">Today, 2:34 PM</div>
+                                            </div>
+                                            <div style="padding: 6px 0;">
+                                                <div style="font-size: 10px; color: #888; text-transform: uppercase; letter-spacing: 0.3px;">Next Step</div>
+                                                <div style="font-size: 14px; color: #1a1a1a;">Follow up within 24 hours</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Agentforce Bar -->
+                                <div style="padding: 8px 12px 10px; background: white; border-top: 1px solid #e8e8e8;">
+                                    <div style="display: flex; align-items: center; gap: 8px; background: #f5f5f7; border-radius: 20px; padding: 10px 14px; border: 1px solid #e0e0e0;">
+                                        <span style="font-size: 16px;">&#x1F44B;</span>
+                                        <span style="font-size: 13px; color: #666; flex: 1;">How can I help?</span>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- Home indicator -->
+                            <div style="padding: 6px 0 4px; text-align: center; background: white;">
+                                <div style="width: 100px; height: 4px; background: #ccc; border-radius: 2px; margin: 0 auto;"></div>
+                            </div>
+                        </div>
+                    </div>
+    </div>
+
     <script>
         // ===== REACTIVATE SERVICE POPUP =====
         const reactivateTimeSlots = {
@@ -5694,6 +6047,65 @@
         document.getElementById('aeration-overlay').addEventListener('click', (e) => {
             if (e.target.id === 'aeration-overlay') hideAerationPopup();
         });
+
+        // ===== NET-NEW 50% OFF LEAD FORM POPUP =====
+        function showNetNewPopup() {
+            const overlay = document.getElementById('netnew-overlay');
+            document.getElementById('netnew-body').style.display = 'block';
+            document.getElementById('netnew-sf-mobile').style.display = 'none';
+            // Reset mobile screens
+            document.getElementById('sf-screen-home').style.display = 'block';
+            document.getElementById('sf-screen-leads').style.display = 'none';
+            document.getElementById('sf-bell-dot').style.opacity = '0';
+            document.getElementById('sf-notif-banner').style.opacity = '0';
+            document.getElementById('sf-notif-banner').style.transform = 'translateY(-20px)';
+            overlay.classList.add('visible');
+        }
+
+        function hideNetNewPopup() {
+            document.getElementById('netnew-overlay').classList.remove('visible');
+            document.getElementById('netnew-sf-mobile').style.display = 'none';
+        }
+
+        function confirmNetNew() {
+            // Hide the form modal entirely
+            document.getElementById('netnew-overlay').classList.remove('visible');
+            // Show the floating phone overlay
+            document.getElementById('netnew-sf-mobile').style.display = 'flex';
+
+            // Step 1: Red dot appears on bell (after 800ms)
+            setTimeout(function() {
+                document.getElementById('sf-bell-dot').style.opacity = '1';
+            }, 800);
+
+            // Step 2: Notification banner slides down (after 1.5s)
+            setTimeout(function() {
+                var banner = document.getElementById('sf-notif-banner');
+                banner.style.opacity = '1';
+                banner.style.transform = 'translateY(0)';
+            }, 1500);
+
+            // Step 3: Notification banner slides away (after 4s)
+            setTimeout(function() {
+                var banner = document.getElementById('sf-notif-banner');
+                banner.style.opacity = '0';
+                banner.style.transform = 'translateY(-20px)';
+            }, 4000);
+
+            // Step 4: Transition to Leads screen (after 4.8s)
+            setTimeout(function() {
+                document.getElementById('sf-screen-home').style.display = 'none';
+                document.getElementById('sf-screen-leads').style.display = 'flex';
+                // Auto-scroll the content area down slowly
+                var scrollArea = document.getElementById('sf-screen-leads').querySelector('[style*="overflow-y"]');
+                if (scrollArea) {
+                    scrollArea.scrollTop = 0;
+                    setTimeout(function() {
+                        scrollArea.scrollTo({ top: scrollArea.scrollHeight, behavior: 'smooth' });
+                    }, 800);
+                }
+            }, 4800);
+        }
     </script>
 </body>
 </html>
